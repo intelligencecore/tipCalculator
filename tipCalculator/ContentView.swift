@@ -12,12 +12,14 @@ import SwiftUI
 var number:Int = 10000
 
 
+
 struct ContentView: View {
+	//state to track the setting variable status
+	@State private var openSettings = false
+	
+	
 	
 	var body: some View {
-		
-		
-		
 			
 		HStack {
 			Text("Enter you bill amount here:")
@@ -26,7 +28,7 @@ struct ContentView: View {
 		.font(.title)
 		.padding(.top, 60)
 		
-
+		// show the number and have a backround rounded rectangle behind the number
 		HStack{
 			Text(String(number))
 		}
@@ -36,12 +38,16 @@ struct ContentView: View {
 		.background(
 			RoundedRectangle(cornerRadius: 10)
 				.fill(Color.secondary)
+				.frame(width: 380, height: 70)
 		)
+		
+		
 		
 		
 		HStack {
 		   Text("The total amount based onf the percentage selested will be this:")
 		}
+		.font(.footnote)
 		.padding(.top, 400)
 		
 		
@@ -49,7 +55,6 @@ struct ContentView: View {
 	
 		
 		// stack to jump between screens
-        VStack {
 			HStack {
 				TabView {
 					NavigationStack {
@@ -65,13 +70,15 @@ struct ContentView: View {
 					.tabItem {
 						Label("Settings", systemImage: "gear")
 					}
+					
+					
 				}
 			}
 		.padding(.top, 100)
 			
         }
 		
-    }
+    
 }
 
 #Preview {
