@@ -7,9 +7,15 @@
 
 import SwiftUI
 
+
+
+var number:Int = 10000
+
+
 struct ContentView: View {
 	
 	var body: some View {
+		
 		
 		
 			
@@ -17,25 +23,26 @@ struct ContentView: View {
 			Text("Enter you bill amount here:")
 		}
 		.bold()
-		.font(.largeTitle)
+		.font(.title)
 		.padding(.top, 60)
 		
 
 		HStack{
-			Text("PLACEHOLDER")
+			Text(String(number))
 		}
-		.padding(.top, 100)
+		.padding()
 		.bold()
 		.foregroundColor(Color.mint)
-		.backgroundStyle(RoundedRectangle)
-		
+		.background(
+			RoundedRectangle(cornerRadius: 10)
+				.fill(Color.secondary)
+		)
 		
 		
 		HStack {
-			
-			Text("The total amount based onf the percentage selested will be this:")
+		   Text("The total amount based onf the percentage selested will be this:")
 		}
-		.padding(.top, 300)
+		.padding(.top, 400)
 		
 		
 		
@@ -60,10 +67,10 @@ struct ContentView: View {
 					}
 				}
 			}
-		.padding(.top)
+		.padding(.top, 100)
 			
         }
-        .padding()
+		
     }
 }
 
