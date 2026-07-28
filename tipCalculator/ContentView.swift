@@ -119,19 +119,16 @@ struct ContentView: View {
 		
 		
 		//Show the result number calculated after the percentage is applied
-		HStack(){
-			Text(String(number))
-		}
-		.font(.system(size: 80))
-		.padding()
-		.bold()
-		.foregroundColor(Color.red)
-		.background(
-			RoundedRectangle(cornerRadius: 10)
-				.fill(Color.secondary)
-				.frame(width: 380, height: 70)
-		)
 		
+		Text(String(number))
+			.font(.system(size: 80))
+			.bold()
+			.foregroundColor(.red)
+			.frame(width: 380, height: 120)   // tall enough for size-80 text
+			.background(
+				RoundedRectangle(cornerRadius: 10)
+					.fill(Color.secondary)
+			)
 		
 		
 		
