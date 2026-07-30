@@ -5,14 +5,14 @@ import SwiftUI
 
 
 struct ContentView: View {
-	//state to track the setting variable status
+		//state to track the setting variable status
 	@State private var openSettings = false
 		// not to be 100% accurate
 	@State private var number:Float = 0.00
 	@State private var workingResult:Float = 0.00
 	
 	
-	// do c = a + b
+		// do c = a + b
 	
 	var body: some View {
 		
@@ -24,21 +24,16 @@ struct ContentView: View {
 		.padding(.top, 60)
 		
 			// show the number and have a backround rounded rectangle behind the number
-		HStack(){
-		 TextField("Quantity", value: $number, format: .number)
-				.textFieldStyle(.roundedBorder)
-				.keyboardType(.numberPad)
-				.padding()
-		}
-		.font(.system(size: 80))
-		.padding()
-		.bold()
-		.foregroundColor(Color.red)
-		.background(
-			RoundedRectangle(cornerRadius: 40)
-				.fill(Color.secondary)
-				.frame(width: 370, height: 70)
-		)
+		TextField("Quantity", value: $number, format: .number)
+			.keyboardType(.numberPad)
+			.multilineTextAlignment(.center)
+			.font(.system(size: 40, weight: .bold))
+			.foregroundStyle(.red)
+			.frame(width: 370, height: 70)          // size the field itself
+			.background(
+				RoundedRectangle(cornerRadius: 12)
+					.fill(Color.secondary.opacity(0.3))  // no .frame here — it wraps the field
+			)
 		
 		
 		
@@ -131,56 +126,73 @@ struct ContentView: View {
 		
 		
 		VStack {
-			//Button to reset the value to zero.
+				//Button to reset the value to zero.
 			Button {
 				number = 0.00
 			} label: {
 				Text("Reset")
-				.padding()
-				.bold()
-				.foregroundColor(Color.red)
+					.padding()
+					.bold()
+					.foregroundColor(Color.red)
 			}
-				.glassEffect()
+			.glassEffect(.regular.tint(.purple.opacity(0.3)).interactive())
 		}
 		.padding(.top, 90)
-
 		
 		
-
-		// stack to jump between screens
-			HStack {
-				TabView {
-					NavigationStack {
-							// Home screen goes here
-					}
-					.tabItem {
-						Label("Home", systemImage: "house")
-					}
-					
-					NavigationStack {
-							// dividie screen for multple people screen goes here
-					}
-					.tabItem {
-						Label("Divide", systemImage: "person.3")
-					}
-					
-					NavigationStack {
-							// Settings screen goes here
-					}
-					.tabItem {
-						Label("Settings", systemImage: "gear")
-					}
-					
-					
+		
+		
+			// stack to jump between screens
+		HStack {
+			TabView {
+				NavigationStack {
+						// Home screen goes here
 				}
+				.tabItem {
+					Label("Home", systemImage: "house")
+				}
+				
+				NavigationStack {
+					
+						// dividie screen for multple people screen goes here
+				}
+				.tabItem {
+					Label("Divide", systemImage: "person.3")
+				}
+				
+				NavigationStack {
+						// Settings screen goes here
+					List {
+						NavigationLink("Account", destination: SettingsView())
+						
+					}
+					.navigationTitle("Settings")
+					
+					
+					SettingsView()
+						.navigationTitle("Settings")
+				}
+				.tabItem {
+					Label("Settings", systemImage: "gear")
+				}
+				
+				
 			}
+		}
 		.padding(.top, 100)
-			
-        }
 		
-    
+		
+		
+		//I button to take to the app info
+
+		NavigationStack {
+		}
+		
+	}
+	
+	
 }
 
 #Preview {
-    ContentView()
+	ContentView()
 }
