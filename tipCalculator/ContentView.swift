@@ -1,26 +1,21 @@
-//
-//  ContentView.swift
-//  tipCalculator
-//
-//  Created by Richier on 7/24/26.
-//
-
 import SwiftUI
 
 
 
-var number:Double = 0.0
-var percentageAppliedToFinalResult: Double = 0.0
-var resultHolder:Double = 0.0
+
 
 struct ContentView: View {
 	//state to track the setting variable status
 	@State private var openSettings = false
+		// not to be 100% accurate
+	@State private var number:Float = 0.00
+	@State private var workingResult:Float = 0.00
 	
 	
+	// do c = a + b
 	
 	var body: some View {
-			
+		
 		HStack {
 			Text("Enter you bill amount here:")
 		}
@@ -28,103 +23,106 @@ struct ContentView: View {
 		.font(.title)
 		.padding(.top, 60)
 		
-		// show the number and have a backround rounded rectangle behind the number
+			// show the number and have a backround rounded rectangle behind the number
 		HStack(){
-			Text(String(number))
+		 TextField("Quantity", value: $number, format: .number)
+				.textFieldStyle(.roundedBorder)
+				.keyboardType(.numberPad)
+				.padding()
 		}
 		.font(.system(size: 80))
 		.padding()
 		.bold()
 		.foregroundColor(Color.red)
 		.background(
-			RoundedRectangle(cornerRadius: 10)
+			RoundedRectangle(cornerRadius: 40)
 				.fill(Color.secondary)
-				.frame(width: 380, height: 70)
+				.frame(width: 370, height: 70)
 		)
 		
 		
-		// 3 stacks to show the different percentages to leave as a tip
+		
+			// 3 stacks to show the different percentages to leave as a tip
 		
 		
 		
-		// Stack 1 - 10%
-		
-		HStack(spacing: 16){
-			HStack {
-				Button{
-						// button functionality
-					print("This should print 10")
-				} label: {
-					Text("+ 10%")
-						.foregroundColor(Color.green)
-						.bold()
-				}
+			// Stack 1 - 10%
+		HStack {
+			Button {
+				print("This should print input + 10%")
+				number *= 1.10
+				
+			} label: {
+				Text("+ 10%")
+					.font(.headline)
+					.fontWeight(.bold)
+					.foregroundStyle(.white)
+					.frame(width: 100, height: 100)        // size the label, not the shape
+					.background(
+						RoundedRectangle(cornerRadius: 16)
+							.fill(Color.green)
+					)
 			}
-			.padding()
-			.bold()
-			.background(
-				RoundedRectangle(cornerRadius: 10)
-					.fill(Color.primary)
-					.frame(width: 80, height: 80)
-			)
+			.buttonStyle(.plain)
 			
 			
-			//Button #2 - 20%
-			HStack {
-				Button{
-						// button functionality
-					print("This should print 20")
-				} label: {
-					Text("+ 20%")
-						.foregroundColor(Color.green)
-						.bold()
-				}
+			
+				//Button #2 - 20%
+			Button {
+				print("This should print: input + 20%")
+			} label: {
+				Text("+ 20%")
+					.font(.headline)
+					.fontWeight(.bold)
+					.foregroundStyle(.white)
+					.frame(width: 100, height: 100)        // size the label, not the shape
+					.background(
+						RoundedRectangle(cornerRadius: 16)
+							.fill(Color.green)
+					)
 			}
-			.padding()
-			.bold()
-			.background(
-				RoundedRectangle(cornerRadius: 10)
-					.fill(Color.secondary)
-					.frame(width: 80, height: 80)
-			)
+			.buttonStyle(.plain)
 			
 			
-			//Button # 3 - 30%
-			HStack {
-				Button {
-					print("This should print 30")
-				} label: {
-					Text("+ 30%")
-						.foregroundColor(Color.green)
-				}
-				.padding()
-				.bold()
-				.background(
-					RoundedRectangle(cornerRadius: 10)
-				.fill(Color.primary)
-				.frame(width: 80, height: 80)
-				)
+			
+				//Button # 3 - 30%
+			Button {
+				print("This should print: input + 30%")
+			} label: {
+				Text("+ 30%")
+					.font(.headline)
+					.fontWeight(.bold)
+					.foregroundStyle(.white)
+					.frame(width: 100, height: 100)   // size the label, not the shape
+					.background(
+						RoundedRectangle(cornerRadius: 16)
+							.fill(Color.green)
+					)
 			}
+			.buttonStyle(.plain)
 			
 		}
 		
 		
-		//text saying that the amount of money will be based on the percentage selected
+		
+		
+		
+			//text saying that the amount of money will be based on the percentage selected
 		HStack {
-		   Text("The total amount with the tip selected will be this:")
+			Text("The total amount with the tip selected will be this:")
 				.font(.system(size:17))
 				.bold()
 		}
 		.padding(.top, 50)
 		
 		
-		//Show the result number calculated after the percentage is applied
+			//Show the result number calculated after the percentage is applied
 		
 		Text(String(number))
 			.font(.system(size: 80))
 			.bold()
 			.foregroundColor(.red)
-			.frame(width: 380, height: 120)   // tall enough for size-80 text
+			.frame(width: 390, height: 100)   // tall enough for size-80 text
 			.background(
 				RoundedRectangle(cornerRadius: 10)
 					.fill(Color.secondary)
@@ -132,25 +130,23 @@ struct ContentView: View {
 		
 		
 		
+		VStack {
+			//Button to reset the value to zero.
+			Button {
+				number = 0.00
+			} label: {
+				Text("Reset")
+				.padding()
+				.bold()
+				.foregroundColor(Color.red)
+			}
+				.glassEffect()
+		}
+		.padding(.top, 90)
+
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		// stack to jump between screens
 			HStack {
 				TabView {
@@ -159,6 +155,13 @@ struct ContentView: View {
 					}
 					.tabItem {
 						Label("Home", systemImage: "house")
+					}
+					
+					NavigationStack {
+							// dividie screen for multple people screen goes here
+					}
+					.tabItem {
+						Label("Divide", systemImage: "person.3")
 					}
 					
 					NavigationStack {
