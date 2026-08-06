@@ -7,7 +7,11 @@ struct SettingsView: View {
 	
 	var body: some View {
 		
-		
+		VStack{
+			
+			
+			Text("This view will have all the settings that can be done in the calculator, like resetting the app to factory settings and others")
+		}
 		
 		
 		
