@@ -151,9 +151,41 @@ struct ContentView: View {
 			//			VStack(alignment: .trailing) {
 			//
 			//
+		
+			// dock view tabview
+			// stack to jump between screens
+		
+			NavigationStack {
+				ContentView()
+			}
+			.tabItem {
+				Label("Home", systemImage: "house")
+			}
+			
+			NavigationStack {
+				DivideView()
+			}
+			.tabItem {
+				Label("Divide", systemImage: "person.3")
+			}
+			
+			NavigationStack {
+				SettingsView()
+			}
+			.tabItem {
+				Label("Settings", systemImage: "gear")
+					.navigationTitle("Title")
+			
+		}
 	}
-	
 }
+		
+		
+		
+		
+	
+	
+
 
 
 
