@@ -24,6 +24,7 @@ struct appInfo: View {
 							)
 						)
 						
+						
 						// declare the glowingSwift to get the swift logo to glow.
 						
 						

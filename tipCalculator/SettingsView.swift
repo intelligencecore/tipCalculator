@@ -1,22 +1,34 @@
 import SwiftUI
-import Playgrounds
 
 
 
 struct SettingsView: View {
-	
+	@State private var showInfo = false
 	
 	var body: some View {
 		
 		
+		
+		
+		
 		HStack {
-			Text("Settings go here")
-				
+			Spacer()
+			Button {
+				showInfo = true
+			} label: {
+				Image(systemName: "info.circle")
+			}
 			
 			
 		}
+		.padding(.horizontal)
+		.sheet(isPresented: $showInfo) {
+			appInfo()
+				.glassEffect()
+		}
 	}
 }
+
 
 #Preview {
 	ContentView()

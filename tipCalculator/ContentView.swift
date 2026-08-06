@@ -1,14 +1,14 @@
 import SwiftUI
 
 
-
+	// make gitignore file to remove .dstore files
 
 
 struct ContentView: View {
 		//state to track the setting variable status
 	@State private var openSettings = false
 		// not to be 100% accurate
-	@State private var number:Float = 0.00
+	@State private var inputNumber:Float = 0.00
 	@State private var workingResult:Float = 0.00
 	
 	
@@ -24,14 +24,14 @@ struct ContentView: View {
 		.padding(.top, 60)
 		
 			// show the number and have a backround rounded rectangle behind the number
-		TextField("Quantity", value: $number, format: .number)
-			.keyboardType(.numberPad)
-			.multilineTextAlignment(.center)
-			.font(.system(size: 40, weight: .bold))
+		TextField("Quantity", value: $inputNumber, format: .number)
+			.keyboardType(.decimalPad)
+			.multilineTextAlignment(.trailing)
+			.font(.system(size: 70, weight: .bold))
 			.foregroundStyle(.red)
 			.frame(width: 370, height: 70)          // size the field itself
 			.background(
-				RoundedRectangle(cornerRadius: 12)
+				RoundedRectangle(cornerRadius: 11)
 					.fill(Color.secondary.opacity(0.3))  // no .frame here — it wraps the field
 			)
 		
@@ -45,7 +45,7 @@ struct ContentView: View {
 		HStack {
 			Button {
 				print("This should print input + 10%")
-				number *= 1.10
+				workingResult = inputNumber * 1.10
 				
 			} label: {
 				Text("+ 10%")
@@ -65,6 +65,7 @@ struct ContentView: View {
 				//Button #2 - 20%
 			Button {
 				print("This should print: input + 20%")
+				workingResult = inputNumber * 1.20
 			} label: {
 				Text("+ 20%")
 					.font(.headline)
@@ -76,19 +77,22 @@ struct ContentView: View {
 							.fill(Color.green)
 					)
 			}
-			.buttonStyle(.plain)
+			.buttonStyle(.borderless)
 			
 			
 			
 				//Button # 3 - 30%
 			Button {
 				print("This should print: input + 30%")
+				workingResult = inputNumber * 1.30
 			} label: {
 				Text("+ 30%")
 					.font(.headline)
 					.fontWeight(.bold)
 					.foregroundStyle(.white)
-					.frame(width: 100, height: 100)   // size the label, not the shape
+					.frame(
+						width: 100,
+						height: 100)   // size the label, not the shape
 					.background(
 						RoundedRectangle(cornerRadius: 16)
 							.fill(Color.green)
@@ -113,7 +117,7 @@ struct ContentView: View {
 		
 			//Show the result number calculated after the percentage is applied
 		
-		Text(String(number))
+		Text(String(workingResult))
 			.font(.system(size: 80))
 			.bold()
 			.foregroundColor(.red)
@@ -128,7 +132,8 @@ struct ContentView: View {
 		VStack {
 				//Button to reset the value to zero.
 			Button {
-				number = 0.00
+				inputNumber = 0.00
+				workingResult = 0.00
 			} label: {
 				Text("Reset")
 					.padding()
@@ -142,56 +147,25 @@ struct ContentView: View {
 		
 		
 		
-			// stack to jump between screens
-		HStack {
-			TabView {
-				NavigationStack {
-						// Home screen goes here
-				}
-				.tabItem {
-					Label("Home", systemImage: "house")
-				}
-				
-				NavigationStack {
-					
-						// dividie screen for multple people screen goes here
-				}
-				.tabItem {
-					Label("Divide", systemImage: "person.3")
-				}
-				
-				NavigationStack {
-						// Settings screen goes here
-					List {
-						NavigationLink("Account", destination: SettingsView())
-						
-					}
-					.navigationTitle("Settings")
-					
-					
-					SettingsView()
-						.navigationTitle("Settings")
-				}
-				.tabItem {
-					Label("Settings", systemImage: "gear")
-				}
-				
-				
-			}
-		}
-		.padding(.top, 100)
-		
-		
-		
-		//I button to take to the app info
-
-		NavigationStack {
-		}
-		
+			//I button to take to the app info
+			//			VStack(alignment: .trailing) {
+			//
+			//
 	}
 	
-	
 }
+
+
+
+
+	//I button to take to the app info
+
+
+
+
+
+
+
 
 #Preview {
 	ContentView()
