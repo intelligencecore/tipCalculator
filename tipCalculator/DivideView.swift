@@ -6,9 +6,36 @@ import SwiftUI
 
 
 struct DivideView: View {
+	@State private var divisor = ""
+
+	
+	
 	var body: some View {
 		
-		Text("This will have a screen asking for how many friends did the user had to split the check between")
+		
+		
+		
+		
+		Text("How Many friends did you bring along to the restaurant?")
+			.font(.title)
+			.padding()
+		
+		
+		
+		TextField("Input", text: $divisor)
+			.bold()
+			.font(.headline)
+			.padding(.top)
+			.padding()
+		
+		
+		
+			.onSubmit {
+				Text("The check has to be in \(divisor)")
+					
+				
+			}
+		
 		
 		
 		

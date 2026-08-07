@@ -4,21 +4,14 @@ import SwiftUI
 
 struct SettingsView: View {
 	@State private var showInfo = false
-	@State private var divisor = ""
+	
+	
 	var body: some View {
 		
 		VStack{
 			
 			
-			Text("How Many friends did you bring along to the restaurant?")
-				.font(.title)
-				.padding()
 			
-			
-			TextField("Input", text: $divisor)
-				.font(.headline)
-				.padding(.top)
-				.padding()
 			
 
 			Spacer()
@@ -32,7 +25,7 @@ struct SettingsView: View {
 					Image(systemName: "info.circle")
 				}
 				.glassEffect()
-			
+				
 				
 				
 			}
