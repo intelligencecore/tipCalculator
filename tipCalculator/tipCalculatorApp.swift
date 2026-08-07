@@ -1,10 +1,3 @@
-//
-//  tipCalculatorApp.swift
-//  tipCalculator
-//
-//  Created by Richier on 7/24/26.
-//
-
 import SwiftUI
 
 @main

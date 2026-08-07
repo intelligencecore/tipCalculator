@@ -1,5 +1,5 @@
 import SwiftUI
-import Playgrounds
+
 
 
 
@@ -27,7 +27,6 @@ struct DockView: View {
 			}
 			.tabItem {
 				Label("Settings", systemImage: "gear")
-					.navigationTitle("Title")
 			}
 		}
 		

@@ -29,15 +29,15 @@ struct ContentView: View {
 			.multilineTextAlignment(.trailing)
 			.font(.system(size: 70, weight: .bold))
 			.foregroundStyle(.red)
-			.frame(width: 370, height: 70)          // size the field itself
+			.frame(width: 390, height: 65)          // size the field itself
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-				.fill(Color.secondary.opacity(0.3))  // no .frame here — it wraps the field
+					.fill(Color.secondary.opacity(0.3))  // no .frame here — it wraps the field
 			)
 		
+		//TODO: Fix keyboard lock in after the input of integers (Add done button on the keyboard to hide after the use)
 		
 		
-			// 3 stacks to show the different percentages to leave as a tip
 		
 		
 		
@@ -116,18 +116,18 @@ struct ContentView: View {
 		
 		
 			//Show the result number calculated after the percentage is applied
-		
+		VStack(alignment:.trailing){
 		Text(String(workingResult))
 			.font(.system(size: 80))
 			.bold()
 			.foregroundColor(.red)
-			.frame(width: 390, height: 100)   // tall enough for size-80 text
+			.frame(width: 390, height: 65)   // tall enough for size-80 text
 			.background(
 				RoundedRectangle(cornerRadius: 10)
 					.fill(Color.secondary)
 			)
 		
-		
+	}
 		
 		VStack {
 				//Button to reset the value to zero.
@@ -145,21 +145,6 @@ struct ContentView: View {
 		.padding(.top, 90)
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

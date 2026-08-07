@@ -16,7 +16,7 @@ struct DivideView: View {
 		
 		
 		
-		Text("How Many friends did you bring along to the restaurant?")
+		Text("How many friends did you bring along to the restaurant?")
 			.font(.title)
 			.padding()
 		
@@ -27,14 +27,11 @@ struct DivideView: View {
 			.font(.headline)
 			.padding(.top)
 			.padding()
-		
-		
-		
 			.onSubmit {
-				Text("The check has to be in \(divisor)")
-					
 				
+				print(divisor)
 			}
+		
 		
 		
 		

@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct appInfo: View {
 	var body: some View {
@@ -6,14 +7,14 @@ struct appInfo: View {
 		
 		NavigationStack{
 			
-				ScrollView{
-					VStack {
+			ScrollView{
+				VStack {
 					Text("Made with ❤️ in NYC using:")
 						.padding(.top, 100)
 						.padding(.bottom, 100)
 						.bold()
 					
-						Image(systemName: "swift")
+					Image(systemName: "swift")
 						.font(.system(size: 250))
 						.foregroundStyle(
 							RadialGradient(
@@ -23,17 +24,6 @@ struct appInfo: View {
 								endRadius: 150
 							)
 						)
-						
-						
-						// declare the glowingSwift to get the swift logo to glow.
-						
-						
-//						.frame(width: 800, height: 300) // lock the image in place
-//						.shadow(color: .orange.opacity(glowingSwift ? 0.8 : 0.0), radius: 40) // glowing shadow for the swift icon
-//						.animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true), value: glowingSwift)
-//						.onAppear {
-//							glowingSwift = true
-//						}
 				}
 				.padding()
 				Text("The Swift Programming Language")
@@ -41,6 +31,22 @@ struct appInfo: View {
 					.bold()
 				
 			}
+			
+			
+			Button("Know more about Swift") {
+			 // add a link to the official swift documentation from Apple.
+				if let url = URL(string: "https://apple.com/swift") {
+					UIApplication.shared.open(url)
+				}
+			}
+			.buttonStyle(.glass)
+			
+			
+			Text("This application is independent and is not affiliated with, sponsored by, or otherwise approved by Apple Inc. Apple, iPhone,iPad and The Swift Bird Logo are trademarks of Apple Inc. registered in the U.S. and other countries.")
+				.font(.footnote)
+				.padding()
+				.formStyle(.automatic)
+				.multilineTextAlignment(.center)
 		}
 	}
 }

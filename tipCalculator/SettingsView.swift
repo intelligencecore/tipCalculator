@@ -10,9 +10,28 @@ struct SettingsView: View {
 		
 		VStack{
 			
+			//Add a title here saying "Settings" with navigationLink
+			Text("View to change settings in the app")
 			
-			
-			
+			List{
+				
+				
+				Button("Reset to default"){
+				
+					
+					
+				}
+				
+				Button("Use Euro intead of US Dollars"){
+					
+					
+					
+					
+				}
+				
+				
+				
+			}
 
 			Spacer()
 			
@@ -22,9 +41,11 @@ struct SettingsView: View {
 				Button {
 					showInfo = true
 				} label: {
+					Text("Know more about this App")
 					Image(systemName: "info.circle")
+						.glassEffect()
 				}
-				.glassEffect()
+				.padding(.bottom)
 				
 				
 				
