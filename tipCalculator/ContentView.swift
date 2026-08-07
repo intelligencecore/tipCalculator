@@ -32,7 +32,7 @@ struct ContentView: View {
 			.frame(width: 370, height: 70)          // size the field itself
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.fill(Color.secondary.opacity(0.3))  // no .frame here — it wraps the field
+				.fill(Color.secondary.opacity(0.3))  // no .frame here — it wraps the field
 			)
 		
 		
@@ -143,33 +143,19 @@ struct ContentView: View {
 			.glassEffect(.regular.tint(.purple.opacity(0.3)).interactive())
 		}
 		.padding(.top, 90)
-		
-		
-		
-		
-			//I button to take to the app info
-			//			VStack(alignment: .trailing) {
-			//
-			//
-		
-			// dock view tabview
-			// stack to jump between screens
-		
-			
 	}
 }
-		
-		
-		
-		
-	
-	
 
 
 
 
 
-	//I button to take to the app info
+
+
+
+
+
+
 
 
 

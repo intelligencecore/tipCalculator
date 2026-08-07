@@ -10,6 +10,9 @@ struct DivideView: View {
 		
 		Text("This will have a screen asking for how many friends did the user had to split the check between")
 		
+		
+		
+		
 		Button {
 			
 		}label: {

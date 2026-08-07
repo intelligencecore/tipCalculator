@@ -4,38 +4,49 @@ import SwiftUI
 
 struct SettingsView: View {
 	@State private var showInfo = false
-	
+	@State private var divisor = ""
 	var body: some View {
 		
 		VStack{
 			
 			
-			Text("This view will have all the settings that can be done in the calculator, like resetting the app to factory settings and others")
-		}
-		
-		
-		
-		HStack {
+			Text("How Many friends did you bring along to the restaurant?")
+				.font(.title)
+				.padding()
+			
+			
+			TextField("Input", text: $divisor)
+				.font(.headline)
+				.padding(.top)
+				.padding()
+			
+
 			Spacer()
-			Button {
-				showInfo = true
-			} label: {
-				Image(systemName: "info.circle")
-			}
 			
 			
-		}
-		.padding(.horizontal)
-		.sheet(isPresented: $showInfo) {
-			appInfo()
+			HStack {
+				Spacer()
+				Button {
+					showInfo = true
+				} label: {
+					Image(systemName: "info.circle")
+				}
 				.glassEffect()
+			
+				
+				
+			}
+			.padding(.horizontal)
+			.sheet(isPresented: $showInfo) {
+				appInfo()
+			}
 		}
 	}
+	
 }
 
-
 #Preview {
-	ContentView()
+	SettingsView()
 }
 
 
