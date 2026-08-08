@@ -41,7 +41,7 @@ struct SettingsView: View {
 				Button {
 					showInfo = true
 				} label: {
-					Text("Know more about this App")
+					Text("Learn more about this App")
 					Image(systemName: "info.circle")
 						.glassEffect()
 				}

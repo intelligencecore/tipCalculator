@@ -7,10 +7,9 @@ import SwiftUI
 struct ContentView: View {
 		//state to track the setting variable status
 	@State private var openSettings = false
-		// not to be 100% accurate
 	@State private var inputNumber:Float = 0.00
 	@State private var workingResult:Float = 0.00
-	
+	@FocusState private var inputDone: Bool
 	
 		// do c = a + b
 	
@@ -29,16 +28,28 @@ struct ContentView: View {
 			// show the number and have a backround rounded rectangle behind the number
 		TextField("Quantity", value: $inputNumber, format: .number)
 			.keyboardType(.decimalPad)
+			.focused($inputDone)
 			.multilineTextAlignment(.trailing)
 			.font(.system(size: 70, weight: .bold))
 			.foregroundStyle(.red)
-			.frame(width: 390, height: 65)          // size the field itself
+			.frame(width: 390, height: 65)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.fill(Color.secondary.opacity(0.3))  // no .frame here — it wraps the field
+					.fill(Color.secondary.opacity(0.3))
 			)
+			.toolbar {
+				ToolbarItemGroup(placement: .keyboard){
+					Spacer()
+					Button("Done") {
+						inputDone = false
+					}
+				}
+			}
+			.padding(.bottom, 20)
+
 		
-		//TODO: Fix keyboard lock in after the input of integers (Add done button on the keyboard to hide after the use)
+		
+		//TODO: Fix keyboard lock in after the input of integers (Add done button on the keyboard to hide after the use)✅ (Done with the toolbaritem and the focuskeyboardstate)
 		
 		
 		
@@ -62,6 +73,7 @@ struct ContentView: View {
 					)
 			}
 			.buttonStyle(.plain)
+			
 			
 			
 			
