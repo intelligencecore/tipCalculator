@@ -22,6 +22,9 @@ struct ContentView: View {
 		.bold()
 		.font(.title)
 		.padding(.top, 60)
+		//TODO: Change the color scheme and make it more glossy and Liquid Glass like.
+		
+		
 		
 			// show the number and have a backround rounded rectangle behind the number
 		TextField("Quantity", value: $inputNumber, format: .number)
