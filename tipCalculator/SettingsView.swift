@@ -52,7 +52,7 @@ struct SettingsView: View {
 			}
 			.padding(.horizontal)
 			.sheet(isPresented: $showInfo) {
-				appInfo()
+				AppInfo()
 			}
 		}
 	}
