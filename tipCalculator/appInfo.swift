@@ -25,7 +25,7 @@ struct appInfo: View {
 							)
 						)
 				}
-				.padding()
+				.padding(.bottom)
 				Text("The Swift Programming Language")
 					.font(.title2)
 					.bold()
@@ -33,7 +33,7 @@ struct appInfo: View {
 			}
 			
 			
-			Button("Know more about Swift") {
+			Button("Learn more about Swift") {
 			 // add a link to the official swift documentation from Apple.
 				if let url = URL(string: "https://apple.com/swift") {
 					UIApplication.shared.open(url)

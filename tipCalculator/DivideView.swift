@@ -27,10 +27,9 @@ struct DivideView: View {
 			.font(.headline)
 			.padding(.top)
 			.padding()
-			.onSubmit {
-				
-				print(divisor)
-			}
+			
+		
+		
 		
 		
 		

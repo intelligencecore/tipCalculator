@@ -5,6 +5,8 @@ import SwiftUI
 
 
 struct DockView: View {
+	@State private var division = 0.0
+	
 	var body: some View {
 		
 		TabView {
@@ -12,7 +14,7 @@ struct DockView: View {
 				ContentView()
 			}
 			.tabItem {
-				Label("Home", systemImage: "house")
+				Label("Calculator", systemImage: "percent")
 			}
 			
 			NavigationStack {
