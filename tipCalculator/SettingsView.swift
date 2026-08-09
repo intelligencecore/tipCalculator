@@ -13,12 +13,15 @@ struct SettingsView: View {
 	//Add a title here saying "Settings" with navigationLink
 			List{
 				Button("Reset to default"){
-					// set the save data to zero 
+					// set the save data to zero
 				}
+				.frame(maxWidth: .infinity, alignment: .leading)
 				
 				Button("Use Euro intead of US Dollars"){
 					//example buttons
 				}
+				.frame(maxWidth: .infinity, alignment: .leading)
+				
 			}
 			
 			Spacer()
@@ -29,9 +32,10 @@ struct SettingsView: View {
 				Button {
 					showInfo = true
 				} label: {
-					Text("Learn more about this App")
-					Image(systemName: "info.circle")
-						.glassEffect()
+					HStack {
+						Text("Learn more about this App")
+						Image(systemName: "info.circle")
+					}
 				}
 				.padding(.bottom)
 				
@@ -44,7 +48,7 @@ struct SettingsView: View {
 			}
 		}
 		.padding(.top, 100)
-		.navigationTitle("Tip Calculator")
+		.navigationTitle("Settings")
 		.navigationBarTitleDisplayMode(.automatic)
 	}
 	
