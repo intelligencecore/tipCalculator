@@ -9,7 +9,7 @@ struct ContentView: View {
 	@State private var openSettings = false
 	@State private var inputNumber:Float = 0.00
 	@State private var workingResult:Float = 0.00
-	@FocusState private var inputDone: Bool
+	@FocusState private var inputDone: Bool //keyboard behavior
 	
 		// do c = a + b
 	
@@ -21,6 +21,7 @@ struct ContentView: View {
 		.bold()
 		.font(.title)
 		.padding(.top, 60)
+		.navigationTitle("Tip Calculator")
 		//TODO: Change the color scheme and make it more glossy and Liquid Glass like.
 		
 		
@@ -45,7 +46,7 @@ struct ContentView: View {
 					}
 				}
 			}
-			.padding(.bottom, 20)
+		
 
 		
 		
@@ -58,21 +59,19 @@ struct ContentView: View {
 			// Stack 1 - 10%
 		HStack {
 			Button {
-				print("This should print input + 10%")
-				workingResult = inputNumber * 1.10
-				
-			} label: {
+			workingResult = inputNumber * 1.10
+				} label: {
 				Text("+ 10%")
-					.font(.headline)
-					.fontWeight(.bold)
-					.foregroundStyle(.white)
-					.frame(width: 100, height: 100)        // size the label, not the shape
-					.background(
-						RoundedRectangle(cornerRadius: 16)
-							.fill(Color.green)
+				.font(.headline)
+				.fontWeight(.bold)
+				.foregroundStyle(.white)
+				.frame(width: 100, height: 100)
+				.background(
+					RoundedRectangle(cornerRadius: 16)
+				.fill(Color.green)
 					)
-			}
-			.buttonStyle(.plain)
+				}
+				.buttonStyle(.plain)
 			
 			
 			

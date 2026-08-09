@@ -10,6 +10,7 @@ struct AppInfo: View {
 			ScrollView{
 				VStack {
 					Text("Made with ❤️ in NYC using:")
+						.font(.system(size: 25))
 						.padding(.top, 100)
 						.padding(.bottom)
 						.bold()

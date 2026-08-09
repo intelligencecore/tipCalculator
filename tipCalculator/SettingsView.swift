@@ -10,29 +10,17 @@ struct SettingsView: View {
 		
 		VStack{
 			
-			//Add a title here saying "Settings" with navigationLink
-			Text("View to change settings in the app")
-			
+	//Add a title here saying "Settings" with navigationLink
 			List{
-				
-				
 				Button("Reset to default"){
-				
-					
-					
+					// set the save data to zero 
 				}
 				
 				Button("Use Euro intead of US Dollars"){
-					
-					
-					
-					
+					//example buttons
 				}
-				
-				
-				
 			}
-
+			
 			Spacer()
 			
 			
@@ -55,6 +43,9 @@ struct SettingsView: View {
 				AppInfo()
 			}
 		}
+		.padding(.top, 100)
+		.navigationTitle("Tip Calculator")
+		.navigationBarTitleDisplayMode(.automatic)
 	}
 	
 }

@@ -1,9 +1,5 @@
 import SwiftUI
 
-
-
-
-
 struct DockView: View {
 	@State private var division = 0.0
 	
@@ -34,8 +30,6 @@ struct DockView: View {
 		
 	}
 }
-
-
 
 
 #Preview {

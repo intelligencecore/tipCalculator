@@ -19,6 +19,8 @@ struct DivideView: View {
 		Text("How many friends did you bring along to the restaurant?")
 			.font(.title)
 			.padding()
+			.navigationTitle("Friends Tip Divisor")
+			
 		
 		
 		
@@ -28,14 +30,7 @@ struct DivideView: View {
 			.padding(.top)
 			.padding()
 			
-		
-		
-		
-		
-		
-		
-		
-		
+
 		Button {
 			
 		}label: {
