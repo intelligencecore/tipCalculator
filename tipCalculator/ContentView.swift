@@ -9,7 +9,7 @@ struct ContentView: View {
 	@State private var openSettings = false
 	@State private var inputNumber:Float = 0.00
 	@State private var workingResult:Float = 0.00
-	@FocusState private var inputDone: Bool //keyboard behavior
+	@FocusState private var isInputDone: Bool //keyboard behavior
 	
 		// do c = a + b
 	
@@ -27,9 +27,9 @@ struct ContentView: View {
 		
 		
 			// show the number and have a backround rounded rectangle behind the number
-		TextField("Quantity", value: $inputNumber, format: .number)
+		TextField("", value: $inputNumber, format: .number)
 			.keyboardType(.decimalPad)
-			.focused($inputDone)
+			.focused($isInputDone)
 			.multilineTextAlignment(.trailing)
 			.font(.system(size: 70, weight: .bold))
 			.foregroundStyle(.red)
@@ -42,20 +42,11 @@ struct ContentView: View {
 				ToolbarItemGroup(placement: .keyboard){
 					Spacer()
 					Button("Done") {
-						inputDone = false
+						isInputDone = false
 					}
 					.padding(.vertical, 20)
 				}
 			}
-		
-
-		
-		
-		//TODO: Fix keyboard lock in after the input of integers (Add done button on the keyboard to hide after the use)✅ (Done with the toolbaritem and the focuskeyboardstate)
-		
-		
-		
-		
 		
 			// Stack 1 - 10%
 		HStack {
@@ -73,7 +64,7 @@ struct ContentView: View {
 					)
 				}
 				.buttonStyle(.plain)
-			
+				.padding(.top, 50)
 			
 			
 			
@@ -93,7 +84,7 @@ struct ContentView: View {
 					)
 			}
 			.buttonStyle(.borderless)
-			
+			.padding(.top, 50)
 			
 			
 				//Button # 3 - 30%
@@ -114,14 +105,10 @@ struct ContentView: View {
 					)
 			}
 			.buttonStyle(.plain)
-			
+			.padding(.top, 50)
 		}
+
 		
-		
-		
-		
-		
-			//text saying that the amount of money will be based on the percentage selected
 		HStack {
 			Text("The total amount with the tip selected will be this:")
 				.font(.system(size:17))

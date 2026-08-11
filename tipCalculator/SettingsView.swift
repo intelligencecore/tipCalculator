@@ -4,27 +4,43 @@ import SwiftUI
 
 struct SettingsView: View {
 	@State private var showInfo = false
-	
+	@State private var enableHapticFeedback: Bool = false
 	
 	var body: some View {
 		
 		VStack{
 			
-	//Add a title here saying "Settings" with navigationLink
+				//Add a title here saying "Settings" with navigationLink
 			List{
 				Button("Reset to default"){
-					// set the save data to zero
+						// set the save data to zero
 				}
 				.frame(maxWidth: .infinity, alignment: .leading)
 				
 				Button("Use Euro intead of US Dollars"){
-					//example buttons
+						//example buttons
 				}
 				.frame(maxWidth: .infinity, alignment: .leading)
 				
 			}
 			
-			Spacer()
+			
+			
+			
+			List{
+				
+				Toggle("Haptic Feedback?", isOn: $enableHapticFeedback)
+				
+			}
+			.scrollDisabled(true)
+			.scrollContentBackground(.hidden)
+			.listRowBackground(Color.clear)
+//			.padding()
+//			.padding(.top, 215)
+			
+			
+			
+			
 			
 			
 			HStack {
@@ -57,10 +73,3 @@ struct SettingsView: View {
 #Preview {
 	SettingsView()
 }
-
-
-
-
-	//@State is a property wrapper that holds the data that the view is representing, its reactive (when the value changes the view will be redrawn automatically). Something more like a switch and a bulb, if the switch is toggled on it will automatically turn on the light and vice versa
-
- //@State holds a piece of data the view owns, and when that data changes it triggers a redraw.
