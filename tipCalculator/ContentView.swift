@@ -44,6 +44,7 @@ struct ContentView: View {
 					Button("Done") {
 						inputDone = false
 					}
+					.padding(.vertical, 20)
 				}
 			}
 		
