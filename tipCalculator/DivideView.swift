@@ -13,15 +13,40 @@ struct DivideView: View {
 	var body: some View {
 		
 		
+		VStack{
+			Text("How many friends did you bring along to the restaurant?")
+				.font(.title)
+				.navigationTitle("Friends Tip Divisor")
+			
+			
+		}
+		.padding()
 		
 		
-		
-		Text("How many friends did you bring along to the restaurant?")
-			.font(.title)
-			.padding()
-			.navigationTitle("Friends Tip Divisor")
 		
 		HStack{
+			
+			Button {
+				
+			}label: {
+				Text("One Friend")
+				// number + 1, 2, 3 or 4
+			}
+		}
+		.background(
+			RoundedRectangle(cornerRadius: 11)
+				.fill(Color.secondary.opacity(0.3))
+		)
+		
+		
+
+		
+		
+		
+		
+		
+		HStack{
+
 			TextField("Input", text: $divisor)
 				.bold()
 				.font(.headline)
@@ -39,7 +64,10 @@ struct DivideView: View {
 		}
 		.padding()
 		.padding(.bottom, 100)
-
+		 
+		
+		
+		
 		
 		
 		
