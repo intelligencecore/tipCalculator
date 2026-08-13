@@ -24,35 +24,74 @@ struct DivideView: View {
 		
 		
 		
-		HStack{
+		HStack(alignment: .top){
 			
 			Button {
 				
 			}label: {
 				Text("One Friend")
-				// number + 1, 2, 3 or 4
+					.tint(Color.primary)
+					// number + 1, 2, 3 or 4
 			}
+			.background(
+				RoundedRectangle(cornerRadius: 11)
+					.glassEffect()
+					.frame(width: 100, height: 60)
+			)
+			.padding()
+			
+			Button {}label: {
+				Text("Two Friends")
+					.tint(Color.primary)
+				
+					// change the binfing variable to the amount og people and then divide the bill + tip on it
+			}
+			.background(
+				RoundedRectangle(cornerRadius: 11)
+					.glassEffect()
+					.frame(width: 100, height: 60)
+					
+			)
+			.padding()
 		}
-		.background(
-			RoundedRectangle(cornerRadius: 11)
-				.fill(Color.secondary.opacity(0.3))
-		)
-		
-		
-
-		
-		
-		
-		
-		
-		HStack{
-
-			TextField("Input", text: $divisor)
-				.bold()
-				.font(.headline)
+		.padding()
+			
+			HStack{
+			Button {
+				
+			}label: {
+				Text("Three Friends")
+					.tint(Color.primary)
+					// number + 1, 2, 3 or 4
+			}
+			.background(
+				RoundedRectangle(cornerRadius: 11)
+					.glassEffect()
+					.frame(width: 100, height: 60)
+			)
+			.padding()
+			
+			
+			
+			Button {
+				
+			}label: {
+				Text("Four Friends")
+					.tint(Color.primary)
+				
+			}
+			.background(
+				RoundedRectangle(cornerRadius: 11)
+					.glassEffect()
+					.frame(width: 100, height: 60)
+					.foregroundStyle(Color.blue)
+			)
+			.padding()
 			
 		}
 		.padding()
+		
+
 		
 		
 		VStack{
@@ -76,7 +115,7 @@ struct DivideView: View {
 		
 		
 		Button {
-			
+			inputBill = ""
 		}label: {
 			Text("Reset")
 		}
