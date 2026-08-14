@@ -40,6 +40,7 @@ struct DivideView: View {
 			)
 			.padding()
 			
+			
 			Button {}label: {
 				Text("Two Friends")
 					.tint(Color.primary)
@@ -48,8 +49,8 @@ struct DivideView: View {
 			}
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.glassEffect()
 					.frame(width: 100, height: 60)
+				
 					
 			)
 			.padding()
@@ -66,7 +67,6 @@ struct DivideView: View {
 			}
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.glassEffect()
 					.frame(width: 100, height: 60)
 			)
 			.padding()
@@ -82,9 +82,7 @@ struct DivideView: View {
 			}
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.glassEffect()
 					.frame(width: 100, height: 60)
-					.foregroundStyle(Color.blue)
 			)
 			.padding()
 			
