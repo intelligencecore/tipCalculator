@@ -28,53 +28,63 @@ struct DivideView: View {
 			
 			Button {
 				
+				divisor = "2"
+				
+				
 			}label: {
 				Text("One Friend")
 					.tint(Color.primary)
-					// number + 1, 2, 3 or 4
+					
+			
 			}
 			.background(
 				RoundedRectangle(cornerRadius: 11)
 					.glassEffect()
 					.frame(width: 100, height: 60)
+					.tint(Color.clear)
 			)
 			.padding()
 			
 			
-			Button {}label: {
+			Button {
+				divisor = "2"
+				
+			}label: {
 				Text("Two Friends")
 					.tint(Color.primary)
 				
-					// change the binfing variable to the amount og people and then divide the bill + tip on it
+				
 			}
 			.background(
 				RoundedRectangle(cornerRadius: 11)
 					.frame(width: 100, height: 60)
-				
-					
+					.tint(Color.clear)
 			)
 			.padding()
 		}
 		.padding()
-			
-			HStack{
+		
+		HStack{
 			Button {
-				
+				divisor = "4"
 			}label: {
 				Text("Three Friends")
 					.tint(Color.primary)
 					// number + 1, 2, 3 or 4
+				
 			}
 			.background(
 				RoundedRectangle(cornerRadius: 11)
 					.frame(width: 100, height: 60)
+					.tint(Color.clear)
+				
 			)
 			.padding()
 			
 			
 			
 			Button {
-				
+				divisor = "5"
 			}label: {
 				Text("Four Friends")
 					.tint(Color.primary)
@@ -83,13 +93,14 @@ struct DivideView: View {
 			.background(
 				RoundedRectangle(cornerRadius: 11)
 					.frame(width: 100, height: 60)
+					.tint(Color.clear)
 			)
 			.padding()
 			
 		}
 		.padding()
 		
-
+		
 		
 		
 		VStack{
@@ -101,7 +112,7 @@ struct DivideView: View {
 		}
 		.padding()
 		.padding(.bottom, 100)
-		 
+		
 		
 		
 		
