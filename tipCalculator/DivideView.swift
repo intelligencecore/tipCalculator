@@ -37,27 +37,28 @@ struct DivideView: View {
 					
 			
 			}
+			.frame(width: 110, height: 60)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
 					.glassEffect()
-					.frame(width: 100, height: 60)
 					.tint(Color.clear)
 			)
 			.padding()
 			
 			
 			Button {
-				divisor = "2"
-				
+				divisor = "3"
+
 			}label: {
 				Text("Two Friends")
 					.tint(Color.primary)
-				
-				
+
+
 			}
+			.frame(width: 110, height: 60)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.frame(width: 100, height: 60)
+					.glassEffect()
 					.tint(Color.clear)
 			)
 			.padding()
@@ -70,14 +71,13 @@ struct DivideView: View {
 			}label: {
 				Text("Three Friends")
 					.tint(Color.primary)
-					// number + 1, 2, 3 or 4
-				
+
 			}
+			.frame(width: 110, height: 60)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.frame(width: 100, height: 60)
+					.glassEffect()
 					.tint(Color.clear)
-				
 			)
 			.padding()
 			
@@ -88,15 +88,16 @@ struct DivideView: View {
 			}label: {
 				Text("Four Friends")
 					.tint(Color.primary)
-				
+
 			}
+			.frame(width: 110, height: 60)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.frame(width: 100, height: 60)
+					.glassEffect()
 					.tint(Color.clear)
 			)
-			.padding()
-			
+
+
 		}
 		.padding()
 		
