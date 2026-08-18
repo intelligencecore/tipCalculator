@@ -34,8 +34,8 @@ struct DivideView: View {
 			}label: {
 				Text("One Friend")
 					.tint(Color.primary)
-					
-			
+				
+				
 			}
 			.frame(width: 110, height: 60)
 			.background(
@@ -48,12 +48,12 @@ struct DivideView: View {
 			
 			Button {
 				divisor = "3"
-
+				
 			}label: {
 				Text("Two Friends")
 					.tint(Color.primary)
-
-
+				
+				
 			}
 			.frame(width: 110, height: 60)
 			.background(
@@ -71,7 +71,7 @@ struct DivideView: View {
 			}label: {
 				Text("Three Friends")
 					.tint(Color.primary)
-
+				
 			}
 			.frame(width: 110, height: 60)
 			.background(
@@ -88,7 +88,7 @@ struct DivideView: View {
 			}label: {
 				Text("Four Friends")
 					.tint(Color.primary)
-
+				
 			}
 			.frame(width: 110, height: 60)
 			.background(
@@ -96,8 +96,8 @@ struct DivideView: View {
 					.glassEffect()
 					.tint(Color.clear)
 			)
-
-
+			
+			
 		}
 		.padding()
 		
@@ -112,7 +112,7 @@ struct DivideView: View {
 				.keyboardType(.decimalPad)
 		}
 		.padding()
-		.padding(.bottom, 100)
+		.padding(.bottom, 110)
 		
 		
 		
