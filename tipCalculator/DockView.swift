@@ -27,7 +27,6 @@ struct DockView: View {
 				Label("Settings", systemImage: "gear")
 			}
 		}
-		
 	}
 }
 

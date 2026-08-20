@@ -13,9 +13,31 @@ struct DivideView: View {
 	var body: some View {
 		
 		
+		
+		
+		
+		
+		VStack{
+			Text("What the full amount of the bill that you got?")
+				.font(.title)
+				.padding()
+				.padding(.bottom, 20)
+		
+			TextField("Bill amount", text: $inputBill)
+				.bold()
+				.font(.headline)
+				.keyboardType(.decimalPad)
+		}
+		.padding()
+		.padding(.bottom, 110)
+		
+		
+		
+		
+		
 		VStack{
 			Text("How many friends did you bring along to the restaurant?")
-				.font(.title)
+				.font(.subheadline)
 				.navigationTitle("Friends Tip Divisor")
 			
 			
@@ -104,15 +126,7 @@ struct DivideView: View {
 		
 		
 		
-		VStack{
-			Text("What the full amount of the bill that you got?")
-			TextField("Bill amount", text: $inputBill)
-				.bold()
-				.font(.headline)
-				.keyboardType(.decimalPad)
-		}
-		.padding()
-		.padding(.bottom, 110)
+	
 		
 		
 		

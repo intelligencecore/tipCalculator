@@ -22,7 +22,7 @@ struct ContentView: View {
 		.font(.title)
 		.padding(.top, 60)
 		.navigationTitle("Tip Calculator")
-		//TODO: Change the color scheme and make it more glossy and Liquid Glass like.
+			//TODO: Change the color scheme and make it more glossy and Liquid Glass like.
 		
 		
 		
@@ -51,20 +51,20 @@ struct ContentView: View {
 			// Stack 1 - 10%
 		HStack {
 			Button {
-			workingResult = inputNumber * 1.10
-				} label: {
+				workingResult = inputNumber * 1.10
+			} label: {
 				Text("+ 10%")
-				.font(.headline)
-				.fontWeight(.bold)
-				.foregroundStyle(.white)
-				.frame(width: 100, height: 100)
-				.background(
-					RoundedRectangle(cornerRadius: 16)
-				.fill(Color.green)
+					.font(.headline)
+					.fontWeight(.bold)
+					.foregroundStyle(.white)
+					.frame(width: 100, height: 100)
+					.background(
+						RoundedRectangle(cornerRadius: 16)
+							.fill(Color.green)
 					)
-				}
-				.buttonStyle(.plain)
-				.padding(.top, 50)
+			}
+			.buttonStyle(.plain)
+			.padding(.top, 50)
 			
 			
 			
@@ -107,7 +107,7 @@ struct ContentView: View {
 			.buttonStyle(.plain)
 			.padding(.top, 50)
 		}
-
+		
 		
 		HStack {
 			Text("The total amount with the tip selected will be this:")
@@ -119,17 +119,17 @@ struct ContentView: View {
 		
 			//Show the result number calculated after the percentage is applied
 		VStack(alignment:.trailing){
-		Text(String(workingResult))
-			.font(.system(size: 80))
-			.bold()
-			.foregroundColor(.red)
-			.frame(width: 390, height: 65)   // tall enough for size-80 text
-			.background(
-				RoundedRectangle(cornerRadius: 10)
-					.fill(Color.secondary)
-			)
-		
-	}
+			Text(String(workingResult))
+				.font(.system(size: 80))
+				.bold()
+				.foregroundColor(.red)
+				.frame(width: 390, height: 65)   // tall enough for size-80 text
+				.background(
+					RoundedRectangle(cornerRadius: 10)
+						.fill(Color.secondary)
+				)
+			
+		}
 		
 		VStack {
 				//Button to reset the value to zero.
@@ -144,7 +144,7 @@ struct ContentView: View {
 			}
 			.glassEffect(.regular.tint(.purple.opacity(0.3)).interactive())
 		}
-		.padding(.top, 90)
+		.padding(.top, 50)
 	}
 }
 
