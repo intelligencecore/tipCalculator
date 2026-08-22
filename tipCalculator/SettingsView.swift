@@ -63,11 +63,21 @@ struct SettingsView: View {
 				AppInfo()
 			}
 		}
-		.padding(.top, 100)
+		.padding(.top, 200)
 		.navigationTitle("Settings")
 		.navigationBarTitleDisplayMode(.automatic)
+		.padding(.bottom, 30)
+		
+		HStack{
+			Text("Version: 0.1")
+				.bold()
+				.font(.footnote)
+				.foregroundStyle(Color.secondary)
+		}
+		.padding()
+
+		
 	}
-	
 }
 
 #Preview {
