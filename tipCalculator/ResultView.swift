@@ -9,15 +9,21 @@ struct ResultView: View {
 		
 		VStack{
 			
+			HStack{
 			Image(systemName: "x.circle")
+				.resizable()
+				.scaledToFit()
+				.frame(width: 300, height: 300)
 				.font(.largeTitle)
 				.foregroundColor(Color.red)
-		
-			Text("The result is not available for now!... working on it")
-				.font(.largeTitle)
+				
+		}
+			Text("The result is not available for now!... working on it!")
+				.font(.title)
 				.bold()
 				
 		}
+		.padding()
 		
 		
 	}
