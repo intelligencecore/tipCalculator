@@ -4,14 +4,14 @@ struct DivideView: View {
 	@State private var divisor = ""
 	@State private var inputBill: String = ""
 	@State private var operation: Int = 0
+	@State private var showResultSheet = false
 
 	var body: some View {
 
 		VStack {
-			Text("What the full amount of the bill that you got?") // fix the size of this in the iphone screen looks cropped
+			Text("What's the full amount of the bill that you got?")  // fix the size of this in the iphone screen looks cropped
 				.font(.title)
-				.padding()
-				.padding(.bottom, 20)
+				.padding(.bottom, 10)
 
 			TextField("Bill amount", text: $inputBill)
 				.bold()
@@ -21,19 +21,19 @@ struct DivideView: View {
 		.padding()
 		.padding(.bottom, 110)
 
-		VStack {
+		VStack(alignment: .leading) {
 			Text("How many friends did you bring along to the restaurant?")
 				.font(.title)
 				.navigationTitle("Friends Tip Divisor")
 
 		}
-		.padding()
 
 		HStack(alignment: .top) {
 
 			Button {
 
 				divisor = "2"
+				showResultSheet = true 
 
 			} label: {
 				Text("One Friend")
@@ -47,13 +47,10 @@ struct DivideView: View {
 					.tint(Color.clear)
 			)
 			.padding(.leading, 10)
-			
 
-			
-			
-			
 			Button {
 				divisor = "3"
+				showResultSheet = true
 
 			} label: {
 				Text("Two Friends")
@@ -73,6 +70,7 @@ struct DivideView: View {
 		HStack {
 			Button {
 				divisor = "4"
+				showResultSheet = true
 			} label: {
 				Text("Three Friends")
 					.tint(Color.primary)
@@ -88,6 +86,7 @@ struct DivideView: View {
 
 			Button {
 				divisor = "5"
+				showResultSheet = true
 			} label: {
 				Text("Four Friends")
 					.tint(Color.primary)
@@ -98,6 +97,10 @@ struct DivideView: View {
 				RoundedRectangle(cornerRadius: 11)
 					.glassEffect()
 			)
+			.sheet(isPresented: $showResultSheet) {
+			
+				ResultView()
+			}
 
 		}
 		.padding()
