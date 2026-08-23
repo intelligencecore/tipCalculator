@@ -8,9 +8,15 @@ struct ResultView: View {
 		
 		
 		VStack{
-			Text("The result is not savailable for now!... working on it")
+			
+			Image(systemName: "x.circle")
+				.font(.largeTitle)
+				.foregroundColor(Color.red)
+		
+			Text("The result is not available for now!... working on it")
 				.font(.largeTitle)
 				.bold()
+				
 		}
 		
 		
