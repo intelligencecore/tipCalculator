@@ -9,7 +9,7 @@ struct DivideView: View {
 	var body: some View {
 
 		VStack {
-			Text("What's the full amount of the bill that you got?")  // fix the size of this in the iphone screen looks cropped
+			Text("What's the full amount of the bill that you got?")
 				.font(.title)
 				.padding(.bottom, 10)
 
@@ -17,9 +17,11 @@ struct DivideView: View {
 				.bold()
 				.font(.headline)
 				.keyboardType(.decimalPad)
+			
+				
 		}
 		.padding()
-		.padding(.bottom, 110)
+		.padding(.bottom, 50)
 
 		VStack(alignment: .leading) {
 			Text("How many friends did you bring along to the restaurant?")
@@ -46,7 +48,7 @@ struct DivideView: View {
 					.glassEffect()
 					.tint(Color.clear)
 			)
-			.padding(.leading, 10)
+			.padding()
 
 			Button {
 				divisor = "3"
@@ -118,6 +120,12 @@ struct DivideView: View {
 		.buttonBorderShape(.roundedRectangle)
 
 	}
+	
+	
+	func division(input one:Int, input two:Int)-> Int{
+		return 0
+	}
+	
 
 }
 
