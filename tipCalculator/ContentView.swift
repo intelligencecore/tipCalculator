@@ -7,11 +7,10 @@ import SwiftUI
 struct ContentView: View {
 		//state to track the setting variable status
 	@State private var openSettings = false
-	@State private var inputNumber:Float = 0.00
-	@State private var workingResult:Float = 0.00
+	@State private var inputNumber:Double = 0.00
+	@State private var workingResult:Double = 0.00
 	@FocusState private var isInputDone: Bool //keyboard behavior
 	
-		// do c = a + b
 	
 	var body: some View {
 		
@@ -22,7 +21,6 @@ struct ContentView: View {
 		.font(.title)
 		.padding(.top, 60)
 		.navigationTitle("Tip Calculator")
-			//TODO: Change the color scheme and make it more glossy and Liquid Glass like.
 		
 		
 		
@@ -33,7 +31,7 @@ struct ContentView: View {
 			.multilineTextAlignment(.trailing)
 			.font(.system(size: 70, weight: .bold))
 			.foregroundStyle(.red)
-			.frame(width: 390, height: 65)
+			.frame(maxWidth: .infinity)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
 					.fill(Color.secondary.opacity(0.3))
@@ -70,7 +68,6 @@ struct ContentView: View {
 			
 				//Button #2 - 20%
 			Button {
-				print("This should print: input + 20%")
 				workingResult = inputNumber * 1.20
 			} label: {
 				Text("+ 20%")
@@ -89,7 +86,6 @@ struct ContentView: View {
 			
 				//Button # 3 - 30%
 			Button {
-				print("This should print: input + 30%")
 				workingResult = inputNumber * 1.30
 			} label: {
 				Text("+ 30%")
@@ -110,20 +106,20 @@ struct ContentView: View {
 		
 		
 		HStack {
-			Text("The total amount with the tip selected will be this:")
-				.font(.system(size:17))
+			Text("Total amount plus tip selected will be this:")
+				.font(.system(size:20))
 				.bold()
 		}
 		.padding(.top, 50)
 		
 		
 			//Show the result number calculated after the percentage is applied
-		VStack(alignment:.trailing){
+		VStack(alignment:.leading){
 			Text(String(workingResult))
 				.font(.system(size: 80))
 				.bold()
-				.foregroundColor(.red)
-				.frame(width: 390, height: 65)   // tall enough for size-80 text
+				.foregroundColor(.green)
+				.frame(maxWidth: .infinity, maxHeight: 70)
 				.background(
 					RoundedRectangle(cornerRadius: 10)
 						.fill(Color.secondary)
