@@ -16,7 +16,6 @@ struct AppInfo: View {
 						.bold()
 					
 					Image(systemName: "swift")
-						.swipeActionsContainer()
 						.font(.system(size: 250))
 						.foregroundStyle(
 							RadialGradient(

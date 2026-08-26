@@ -7,7 +7,7 @@ import SwiftUI
 struct ContentView: View {
 		//state to track the setting variable status
 	@State private var openSettings = false
-	@State private var inputNumber:Double = 0.00
+	@State private var inputNumber:Double = 0
 	@State private var workingResult:Double = 0.00
 	@FocusState private var isInputDone: Bool //keyboard behavior
 	
@@ -19,13 +19,13 @@ struct ContentView: View {
 		}
 		.bold()
 		.font(.title)
-		.padding(.top, 60)
 		.navigationTitle("Tip Calculator")
-		
+		.navigationBarTitleDisplayMode(.large)
+
 		
 		
 			// show the number and have a backround rounded rectangle behind the number
-		TextField("", value: $inputNumber, format: .number)
+		TextField("Amount", value: $inputNumber, format: .number)
 			.keyboardType(.decimalPad)
 			.focused($isInputDone)
 			.multilineTextAlignment(.trailing)
