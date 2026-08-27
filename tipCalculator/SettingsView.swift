@@ -9,8 +9,6 @@ struct SettingsView: View {
 	var body: some View {
 		
 		VStack{
-			
-				//Add a title here saying "Settings" with navigationLink
 			List{
 				Button("Reset to default"){
 						// set the save data to zero
@@ -68,8 +66,10 @@ struct SettingsView: View {
 		.navigationBarTitleDisplayMode(.automatic)
 		.padding(.bottom, 30)
 		
+		
+		//versioning in small letters
 		HStack{
-			Text("Version: 0.1")
+			Text("Version: 0.5")
 				.bold()
 				.font(.footnote)
 				.foregroundStyle(Color.secondary)

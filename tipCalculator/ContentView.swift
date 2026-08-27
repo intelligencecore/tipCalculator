@@ -38,13 +38,12 @@ struct ContentView: View {
 	
 	var body: some View {
 		
-		HStack {
-			Text("Enter you bill amount here:")
-		}
-		.bold()
-		.font(.title)
-		.navigationTitle("Tip Calculator")
-		.navigationBarTitleDisplayMode(.large)
+		
+		Text("Enter you bill amount here:")
+			.bold()
+			.font(.title)
+			.navigationTitle("Tip Calculator")
+			.navigationBarTitleDisplayMode(.automatic)
 		
 		
 		
@@ -130,33 +129,31 @@ struct ContentView: View {
 			.buttonStyle(.plain)
 			.padding(.top, 50)
 			
+		}
 			
-			Button {
-				showCustomPrompt = true
-			} label: {
-				Text("Custom ")
-					.font(.headline)
-					.fontWeight(.bold)
-					.foregroundStyle(.white)
-					.frame(
-						width: 100,
-						height: 100)   // size the label, not the shape
-					.background(
-						RoundedRectangle(cornerRadius: 16)
-							.fill(Color.green)
-					)
-					.alert("Custom tip", isPresented: $showCustomPrompt) {
-						TextField("Amount", value: $customAmount, format: .currency(code: "USD"))
-							.keyboardType(.decimalPad)
-						Button("Cancel", role: .cancel) { }
-						Button("Add") { tip = .custom(amount: customAmount) }
-					} message: {
-						Text("Enter the tip amount you want to add.")
-					}
-			}
-			.padding()
-			.buttonStyle(.plain)
-			.padding(.top, 50)
+		Button {
+			showCustomPrompt = true
+		} label: {
+			
+			Text("Custom ")
+				.font(.headline)
+				.fontWeight(.bold)
+				.foregroundStyle(.white)
+				.frame(
+					width: 320, height: 100)   // size the label, not the shape
+				.background(
+					RoundedRectangle(cornerRadius: 16)
+						.fill(Color.green)
+				)
+				.alert("Custom tip", isPresented: $showCustomPrompt) {
+					TextField("Amount", value: $customAmount, format: .currency(code: "USD"))
+						.keyboardType(.decimalPad)
+					Button("Cancel", role: .cancel) { }
+					Button("Add") { tip = .custom(amount: customAmount) }
+				} message: {
+					Text("Enter the tip amount you want to add.")
+				}
+				.buttonStyle(.plain)
 			
 			
 			
@@ -191,15 +188,7 @@ struct ContentView: View {
 						.fill(.green.opacity(0.15))
 				)
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 		VStack {
 				//Button to reset the value to zero.
@@ -212,9 +201,10 @@ struct ContentView: View {
 					.bold()
 					.foregroundColor(Color.red)
 			}
-			.glassEffect(.regular.tint(.purple.opacity(0.3)).interactive())
+			.frame(width: 200, height: 20)
+			.buttonStyle(.glass)
 		}
-		.padding(.top, 50)
+		.padding(.top, 20)
 	}
 }
 
