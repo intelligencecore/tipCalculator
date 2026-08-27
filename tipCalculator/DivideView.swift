@@ -5,42 +5,42 @@ struct DivideView: View {
 	@State private var inputBill: String = ""
 	@State private var operation: Int = 0
 	@State private var showResultSheet = false
-
+	
 	var body: some View {
-
+		
 		VStack {
 			Text("What's the full amount of the bill that you got?")
 				.font(.title)
 				.padding(.bottom, 10)
-
+			
 			TextField("Bill amount", text: $inputBill)
 				.bold()
 				.font(.headline)
 				.keyboardType(.decimalPad)
 			
-				
+			
 		}
 		.padding()
 		.padding(.bottom, 50)
-
+		
 		VStack(alignment: .leading) {
 			Text("How many friends did you bring along to the restaurant?")
 				.font(.title)
 				.navigationTitle("Friends Tip Divisor")
-
+			
 		}
-
+		
 		HStack(alignment: .top) {
-
+			
 			Button {
-
+				
 				divisor = "2"
-				showResultSheet = true 
-
+				showResultSheet = true
+				
 			} label: {
 				Text("One Friend")
 					.tint(Color.primary)
-
+				
 			}
 			.frame(width: 110, height: 60)
 			.background(
@@ -49,15 +49,15 @@ struct DivideView: View {
 					.tint(Color.clear)
 			)
 			.padding()
-
+			
 			Button {
 				divisor = "3"
 				showResultSheet = true
-
+				
 			} label: {
 				Text("Two Friends")
 					.tint(Color.primary)
-
+				
 			}
 			.frame(width: 110, height: 60)
 			.background(
@@ -68,7 +68,7 @@ struct DivideView: View {
 			.padding()
 		}
 		.padding()
-
+		
 		HStack {
 			Button {
 				divisor = "4"
@@ -76,7 +76,7 @@ struct DivideView: View {
 			} label: {
 				Text("Three Friends")
 					.tint(Color.primary)
-
+				
 			}
 			.frame(width: 110, height: 60)
 			.background(
@@ -85,14 +85,14 @@ struct DivideView: View {
 					.tint(Color.clear)
 			)
 			.padding(.leading, 10)
-
+			
 			Button {
 				divisor = "5"
 				showResultSheet = true
 			} label: {
 				Text("Four Friends")
 					.tint(Color.primary)
-
+				
 			}
 			.frame(width: 110, height: 60)
 			.background(
@@ -100,15 +100,15 @@ struct DivideView: View {
 					.glassEffect()
 			)
 			.sheet(isPresented: $showResultSheet) {
-			
+				
 				ResultView()
 			}
-
+			
 		}
 		.padding()
-
-		// now the full ammount of the bill has to be divided between the friends:
-
+		
+			// now the full ammount of the bill has to be divided between the friends:
+		
 		Button {
 			inputBill = ""
 		} label: {
@@ -118,7 +118,7 @@ struct DivideView: View {
 		.foregroundStyle(.red)
 		.padding(.top, 50)
 		.buttonBorderShape(.roundedRectangle)
-
+		
 	}
 	
 	
@@ -126,7 +126,7 @@ struct DivideView: View {
 		return 0
 	}
 	
-
+	
 }
 
 #Preview {

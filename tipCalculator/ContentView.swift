@@ -10,6 +10,7 @@ struct ContentView: View {
 	enum TipSelection {
 		case none
 		case percent(Double)
+		case custom(amount: Double)
 	}
 	
 	
@@ -20,13 +21,18 @@ struct ContentView: View {
 				return inputNumber
 			case .percent(let p):
 				return inputNumber * (1 + p)
+			case .custom(let amount):
+				return inputNumber + amount
 		}
 	}
+	
+	@State private var customAmount: Double = 0
 	
 		//state to track the setting variable status
 	@State private var tip: TipSelection = .none
 	@State private var openSettings = false
 	@State private var inputNumber:Double = 0
+	@State private var showCustomPrompt = false
 	@FocusState private var isInputDone: Bool //keyboard behavior
 	
 	
@@ -48,12 +54,15 @@ struct ContentView: View {
 			.focused($isInputDone)
 			.multilineTextAlignment(.trailing)
 			.font(.system(size: 70, weight: .bold))
-			.foregroundStyle(.red)
+			.foregroundStyle(.primary)
 			.frame(maxWidth: .infinity)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
 					.fill(Color.secondary.opacity(0.3))
 			)
+			
+			
+			// "Done button"
 			.toolbar {
 				ToolbarItemGroup(placement: .keyboard){
 					Spacer()
@@ -120,6 +129,37 @@ struct ContentView: View {
 			}
 			.buttonStyle(.plain)
 			.padding(.top, 50)
+			
+			
+			Button {
+				showCustomPrompt = true
+			} label: {
+				Text("Custom ")
+					.font(.headline)
+					.fontWeight(.bold)
+					.foregroundStyle(.white)
+					.frame(
+						width: 100,
+						height: 100)   // size the label, not the shape
+					.background(
+						RoundedRectangle(cornerRadius: 16)
+							.fill(Color.green)
+					)
+					.alert("Custom tip", isPresented: $showCustomPrompt) {
+						TextField("Amount", value: $customAmount, format: .currency(code: "USD"))
+							.keyboardType(.decimalPad)
+						Button("Cancel", role: .cancel) { }
+						Button("Add") { tip = .custom(amount: customAmount) }
+					} message: {
+						Text("Enter the tip amount you want to add.")
+					}
+			}
+			.padding()
+			.buttonStyle(.plain)
+			.padding(.top, 50)
+			
+			
+			
 		}
 		
 		
@@ -131,28 +171,11 @@ struct ContentView: View {
 		.padding(.top, 50)
 		
 		
-			//Show the result number calculated after the percentage is applied
-			//		VStack(alignment:.leading){
-			//			Text(String(workingResult))
-			//				.font(.system(size: 80))
-			//				.bold()
-			//				.foregroundColor(.green)
-			//				.frame(maxWidth: .infinity, maxHeight: 70)
-			//				.background(
-			//					RoundedRectangle(cornerRadius: 10)
-			//						.fill(Color.secondary)
-			//				)
-			//
-			//		}
-		
 		
 		
 		
 		
 		VStack(alignment: .leading, spacing: 6) {
-				//			Text("Total with tip")
-				//				.font(.subheadline.weight(.medium))
-				//				.foregroundStyle(.secondary)
 			
 			Text(total, format: .currency(code: "USD"))
 				.font(.system(size: 64, weight: .bold, design: .rounded))
