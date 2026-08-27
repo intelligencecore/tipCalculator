@@ -3,6 +3,14 @@ import SwiftUI
 
 
 struct SettingsView: View {
+	
+//	enum countryCurrency{
+//		case USD(String)
+//		case canadianDollar(String)
+//		case euro(String)
+//	}
+	
+
 	@State private var showInfo = false
 	@State private var enableHapticFeedback: Bool = false
 	
@@ -15,7 +23,7 @@ struct SettingsView: View {
 				}
 				.frame(maxWidth: .infinity, alignment: .leading)
 				
-				Button("Use Euro intead of US Dollars"){
+				Button("Use another currency instead US Dollars"){
 						//example buttons
 				}
 				.frame(maxWidth: .infinity, alignment: .leading)
@@ -64,18 +72,22 @@ struct SettingsView: View {
 		.padding(.top, 200)
 		.navigationTitle("Settings")
 		.navigationBarTitleDisplayMode(.automatic)
-		.padding(.bottom, 30)
+		.padding(.bottom, 0)
 		
 		
 		//versioning in small letters
 		HStack{
-			Text("Version: 0.5")
-				.bold()
-				.font(.footnote)
-				.foregroundStyle(Color.secondary)
+			Button {
+				// open the url of the github project
+			}
+			label: {
+				Text("Version: 0.5")
+					.bold()
+					.font(.footnote)
+					.foregroundStyle(Color.secondary)
+			}
 		}
 		.padding()
-
 		
 	}
 }
