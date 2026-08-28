@@ -4,16 +4,18 @@ import SwiftUI
 
 struct SettingsView: View {
 	
-//	enum countryCurrency{
-//		case USD(String)
-//		case canadianDollar(String)
-//		case euro(String)
-//	}
 	
-
+		// string connected to the calc output saying the currency (USD or EUR or CAD)
+		//	enum countryCurrency{
+		//		case USD(String)
+		//		case canadianDollar(String)
+		//		case euro(String)
+		//	}
+	
+	
 	@State private var showInfo = false
 	@State private var enableHapticFeedback: Bool = false
-	
+	@State private var isVersionTapped: Bool = false
 	var body: some View {
 		
 		VStack{
@@ -23,7 +25,19 @@ struct SettingsView: View {
 				}
 				.frame(maxWidth: .infinity, alignment: .leading)
 				
-				Button("Use another currency instead US Dollars"){
+				Button{
+					
+					
+				} label: {
+					
+				Text("Use another currency instead US Dollars")
+						
+						
+						
+						
+				}
+					
+					
 						//example buttons
 				}
 				.frame(maxWidth: .infinity, alignment: .leading)
@@ -41,8 +55,8 @@ struct SettingsView: View {
 			.scrollDisabled(true)
 			.scrollContentBackground(.hidden)
 			.listRowBackground(Color.clear)
-//			.padding()
-//			.padding(.top, 215)
+				//			.padding()
+				//			.padding(.top, 215)
 			
 			
 			
@@ -75,10 +89,15 @@ struct SettingsView: View {
 		.padding(.bottom, 0)
 		
 		
-		//versioning in small letters
+			//versioning in small letters
+		 // versioning comes fro mhow many times i have done edits to the files
 		HStack{
 			Button {
-				// open the url of the github project
+					// open the url of the github project
+				
+			isVersionTapped = true
+				// let url = URL(from: "https://gihub.com")
+				
 			}
 			label: {
 				Text("Version: 0.5")
