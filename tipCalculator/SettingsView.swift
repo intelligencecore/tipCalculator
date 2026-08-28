@@ -1,5 +1,5 @@
 import SwiftUI
-
+import UIKit
 
 
 struct SettingsView: View {
@@ -16,6 +16,9 @@ struct SettingsView: View {
 	@State private var showInfo = false
 	@State private var enableHapticFeedback: Bool = false
 	@State private var isVersionTapped: Bool = false
+
+	
+	
 	var body: some View {
 		
 		VStack{
@@ -30,12 +33,14 @@ struct SettingsView: View {
 					
 				} label: {
 					
-				Text("Use another currency instead US Dollars")
+					
+					VStack(alignment: .leading){
+						Image(systemName: "swift")
 						
-						
-						
-						
-				}
+							Text("Use another currency instead US Dollars")
+						}
+					}
+				
 					
 					
 						//example buttons
@@ -63,44 +68,44 @@ struct SettingsView: View {
 			
 			
 			
-			HStack {
-				Spacer()
-				Button {
-					showInfo = true
-				} label: {
-					HStack {
-						Text("Learn more about this App")
-						Image(systemName: "info.circle")
-					}
+		HStack {
+			Spacer()
+			Button {
+				showInfo = true
+			} label: {
+				HStack {
+					Text("Learn more about this App")
+					Image(systemName: "info.circle")
 				}
-				.padding(.bottom)
-				
-				
-				
 			}
-			.padding(.horizontal)
-			.sheet(isPresented: $showInfo) {
-				AppInfo()
-			}
+			.padding(.bottom)
+			
+			
+			
 		}
-		.padding(.top, 200)
+		.padding(.horizontal)
+		.sheet(isPresented: $showInfo) {
+			AppInfo()
+		}
 		.navigationTitle("Settings")
 		.navigationBarTitleDisplayMode(.automatic)
 		.padding(.bottom, 0)
 		
 		
 			//versioning in small letters
-		 // versioning comes fro mhow many times i have done edits to the files
+		 // versioning comes from how many times i have done edits to the files
 		HStack{
 			Button {
 					// open the url of the github project
+				if let url = URL(string: "https://github.com/intelligencecore/tipCalculator") {
+					UIApplication.shared.open(url)
+				}
+			
 				
-			isVersionTapped = true
-				// let url = URL(from: "https://gihub.com")
 				
 			}
 			label: {
-				Text("Version: 0.5")
+				Text("Version: 0.6")
 					.bold()
 					.font(.footnote)
 					.foregroundStyle(Color.secondary)
