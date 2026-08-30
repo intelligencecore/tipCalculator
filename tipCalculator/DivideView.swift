@@ -10,6 +10,7 @@ struct DivideView: View {
 		
 		VStack {
 			Text("What's the full amount of the bill that you got?")
+				.bold()
 				.font(.title)
 				.padding(.bottom, 10)
 			
@@ -106,19 +107,21 @@ struct DivideView: View {
 			
 		}
 		.padding()
+	
+	
 		
-			// now the full ammount of the bill has to be divided between the friends:
+		
 		
 		Button {
 			inputBill = ""
 		} label: {
 			Text("Reset")
 		}
-		.glassEffect(.clear)
 		.foregroundStyle(.red)
+		.frame(width: 300, height: 60)
+		.glassEffect(.clear)
 		.padding(.top, 50)
 		.buttonBorderShape(.roundedRectangle)
-		
 	}
 	
 	

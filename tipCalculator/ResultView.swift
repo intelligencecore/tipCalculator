@@ -27,11 +27,6 @@ struct ResultView: View {
 		
 		
 	}
-	func result() -> Int {
-		
-		
-	return 10
-	}
 
 	
 }

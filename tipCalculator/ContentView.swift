@@ -26,6 +26,8 @@ struct ContentView: View {
 		}
 	}
 	
+	
+	
 	@State private var customAmount: Double = 0
 	
 		//state to track the setting variable status
@@ -59,8 +61,6 @@ struct ContentView: View {
 				RoundedRectangle(cornerRadius: 11)
 					.fill(Color.secondary.opacity(0.3))
 			)
-			
-			
 			// "Done button"
 			.toolbar {
 				ToolbarItemGroup(placement: .keyboard){
@@ -159,19 +159,13 @@ struct ContentView: View {
 			
 		}
 		
-		
 		HStack {
 			Text("Total amount plus tip selected will be this:")
 				.font(.system(size:20))
 				.bold()
 		}
 		.padding(.top, 50)
-		
-		
-		
-		
-		
-		
+
 		VStack(alignment: .leading, spacing: 6) {
 			
 			Text(total, format: .currency(code: "USD"))
@@ -188,7 +182,7 @@ struct ContentView: View {
 						.fill(.green.opacity(0.15))
 				)
 		}
-
+		
 		
 		VStack {
 				//Button to reset the value to zero.
@@ -197,14 +191,13 @@ struct ContentView: View {
 				tip = .none
 			} label: {
 				Text("Reset")
-					.padding()
 					.bold()
 					.foregroundColor(Color.red)
+					.frame(width: 300, height: 60)
 			}
-			.frame(width: 200, height: 20)
 			.buttonStyle(.glass)
 		}
-		.padding(.top, 20)
+		.padding(.bottom, 20)
 	}
 }
 
