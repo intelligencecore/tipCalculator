@@ -41,12 +41,14 @@ struct ContentView: View {
 	var body: some View {
 		
 		
-		Text("Enter you bill amount here:")
-			.bold()
-			.font(.title)
-			.navigationTitle("Tip Calculator")
-			.navigationBarTitleDisplayMode(.automatic)
-		
+		HStack {
+			Text("Enter you bill amount here:")
+		}
+		.bold()
+		.font(.title)
+		.padding()
+		.navigationTitle("Tip Calculator")
+		.navigationBarTitleDisplayMode(.automatic)
 		
 		
 			// show the number and have a backround rounded rectangle behind the number

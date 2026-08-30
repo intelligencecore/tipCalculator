@@ -102,7 +102,7 @@ struct SettingsView: View {
 				}
 			}
 			label: {
-				Text("Version: 0.6")
+				Text("Version: 0.7")
 					.bold()
 					.font(.footnote)
 					.foregroundStyle(Color.secondary)

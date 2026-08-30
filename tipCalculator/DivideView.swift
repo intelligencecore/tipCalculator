@@ -50,6 +50,7 @@ struct DivideView: View {
 					.tint(Color.clear)
 			)
 			.padding()
+			.padding(.leading, 20)
 			
 			Button {
 				divisor = "3"
@@ -68,7 +69,7 @@ struct DivideView: View {
 			)
 			.padding()
 		}
-		.padding()
+		.padding(.trailing, 20)
 		
 		HStack {
 			Button {
