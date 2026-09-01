@@ -52,7 +52,7 @@ struct ContentView: View {
 		
 		
 			// show the number and have a backround rounded rectangle behind the number
-		TextField("Amount", value: $inputNumber, format: .number)
+		TextField("Amount ", value: $inputNumber, format: .number)
 			.keyboardType(.decimalPad)
 			.focused($isInputDone)
 			.multilineTextAlignment(.trailing)

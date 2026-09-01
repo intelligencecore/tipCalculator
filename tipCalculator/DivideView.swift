@@ -12,26 +12,33 @@ struct DivideView: View {
 			Text("What's the full amount of the bill that you got?")
 				.bold()
 				.font(.title)
+				.fontWeight(.regular)
 				.padding(.bottom, 10)
 			
 			TextField("Bill amount", text: $inputBill)
+				.background(RoundedRectangle(cornerRadius: 10)
+					.foregroundColor(Color.green.opacity(0.1))
+					.frame(height: 50)
+				)
 				.bold()
 				.font(.headline)
 				.keyboardType(.decimalPad)
+				.padding(.bottom, 25)
 			
-			
-		}
-		.padding()
-		.padding(.bottom, 50)
-		
-		VStack(alignment: .leading) {
 			Text("How many friends did you bring along to the restaurant?")
 				.font(.title)
 				.navigationTitle("Friends Tip Divisor")
 			
+			
+			
 		}
+		.padding()
+		.padding(.bottom, 25)
 		
-		HStack(alignment: .top) {
+		
+		
+		VStack{
+		
 			
 			Button {
 				

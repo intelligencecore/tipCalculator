@@ -22,49 +22,74 @@ struct SettingsView: View {
 	var body: some View {
 		
 		VStack{
+			
 			List{
 				Button("Reset to default"){
 						// set the save data to zero
 				}
-				.frame(maxWidth: .infinity, alignment: .leading)
 				
-				Button{
+			
 					
-					
-				} label: {
-					
-					
-					VStack(alignment: .leading){
-						Image(systemName: "swift")
-						
-						Text("Use another currency instead US Dollars")
-					}
-				}
-				
-				
-				
-					//example buttons
 			}
 			.frame(maxWidth: .infinity, alignment: .leading)
 			
 		}
 		
 		
+		Text("Use another currency?")
+			.bold()
+			.padding()
+		
+		HStack {
+			
+			Button{}label: {
+				Text("USD")
+					.foregroundColor(Color.white)
+			}
+			.background(RoundedRectangle(cornerRadius: 10)
+			.frame(width: 60, height: 40))
+			.scaledToFit()
+			.foregroundColor(Color.green)
+			.padding()
+			
+			Button{}label: {
+				Text("MEX")
+			}
+			.background(RoundedRectangle(cornerRadius: 10)
+			.frame(width: 60, height: 40))
+			.scaledToFit()
+			.padding()
+			
+			Button{}label: {
+				Text("AUD")
+			}
+			.background(RoundedRectangle(cornerRadius: 10)
+			.frame(width: 60, height: 40))
+			.scaledToFit()
+			.padding()
+			
+			Button{}label: {
+				Text("GBP")
+			}
+			.background(RoundedRectangle(cornerRadius: 10)
+			.frame(width: 60, height: 40))
+			.scaledToFit()
+			.padding()
+			
+		}
 		
 		
 		List{
 			
 			Toggle("Haptic Feedback?", isOn: $enableHapticFeedback)
+				// add the haptic call to this toggle
+		
 			
 		}
 		.scrollDisabled(true)
 		.scrollContentBackground(.hidden)
 		.listRowBackground(Color.clear)
-			//			.padding()
-			//			.padding(.top, 215)
-		
-		
-		
+		.padding(.top, 200)
 		
 		
 		
@@ -102,7 +127,7 @@ struct SettingsView: View {
 				}
 			}
 			label: {
-				Text("Version: 0.7")
+				Text("Version: 0.8")
 					.bold()
 					.font(.footnote)
 					.foregroundStyle(Color.secondary)
