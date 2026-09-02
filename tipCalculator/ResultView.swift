@@ -18,7 +18,7 @@ struct ResultView: View {
 				.foregroundColor(Color.red)
 				
 		}
-			Text("The result is not available for now!... working on it!")
+			Text("Dang it!  The result is not available for now!... working on it!")
 				.font(.title)
 				.bold()
 				
@@ -27,8 +27,6 @@ struct ResultView: View {
 		
 		
 	}
-
-	
 }
 
 

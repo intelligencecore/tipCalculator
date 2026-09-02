@@ -26,7 +26,7 @@ struct DivideView: View {
 				.padding(.bottom, 25)
 			
 			Text("How many friends did you bring along to the restaurant?")
-				.font(.title)
+				.font(.caption)
 				.navigationTitle("Friends Tip Divisor")
 			
 			
@@ -37,8 +37,8 @@ struct DivideView: View {
 		
 		
 		
-		VStack{
-		
+		HStack(spacing: 5){
+		//TODO: Fix the buttions to be side by sude on the screen and maybe making them bigger (Screen edge)
 			
 			Button {
 				
@@ -47,17 +47,17 @@ struct DivideView: View {
 				
 			} label: {
 				Text("One Friend")
-					.tint(Color.primary)
-				
+				Image(systemName: "person")
+					.font(.title)
 			}
-			.frame(width: 110, height: 60)
+			.scaledToFit()
+			.frame(width: 180, height: 180)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.glassEffect()
-					.tint(Color.clear)
+					.foregroundColor(Color.purple)
 			)
-			.padding()
-			.padding(.leading, 20)
+//			.padding()
+
 			
 			Button {
 				divisor = "3"
@@ -66,17 +66,17 @@ struct DivideView: View {
 			} label: {
 				Text("Two Friends")
 					.tint(Color.primary)
-				
+				Image(systemName: "person.2")
+					.font(.headline)
 			}
-			.frame(width: 110, height: 60)
+			.scaledToFit()
+			.frame(width: 180, height: 180)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.glassEffect()
-					.tint(Color.clear)
+					.foregroundColor(Color.red)
 			)
-			.padding()
 		}
-		.padding(.trailing, 20)
+		
 		
 		HStack {
 			Button {
@@ -85,15 +85,17 @@ struct DivideView: View {
 			} label: {
 				Text("Three Friends")
 					.tint(Color.primary)
+				Image(systemName: "person.3")
+					.font(.headline)
+					.foregroundColor(Color.primary)
 				
 			}
-			.frame(width: 110, height: 60)
+			.scaledToFit()
+			.frame(width: 180, height: 180)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.glassEffect()
-					.tint(Color.clear)
+					.foregroundColor(Color.blue)
 			)
-			.padding(.leading, 10)
 			
 			Button {
 				divisor = "5"
@@ -101,12 +103,15 @@ struct DivideView: View {
 			} label: {
 				Text("Four Friends")
 					.tint(Color.primary)
+				Image(systemName: "person")
+					.font(.headline)
 				
 			}
-			.frame(width: 110, height: 60)
+			.scaledToFit()
+			.frame(width: 180, height: 180)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.glassEffect()
+					.foregroundColor(Color.orange)
 			)
 			.sheet(isPresented: $showResultSheet) {
 				
@@ -128,14 +133,13 @@ struct DivideView: View {
 		.foregroundStyle(.red)
 		.frame(width: 300, height: 60)
 		.glassEffect(.clear)
-		.padding(.top, 50)
 		.buttonBorderShape(.roundedRectangle)
 	}
 	
 	
-	func division(input one:Int, input two:Int)-> Int{
-		return 0
-	}
+//	func division(input one:Int, input two:Int)-> Int{
+//		return 0
+//	}
 	
 	
 }

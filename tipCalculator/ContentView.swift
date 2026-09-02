@@ -186,7 +186,7 @@ struct ContentView: View {
 		}
 		
 		
-		VStack {
+		
 				//Button to reset the value to zero.
 			Button {
 				inputNumber = 0
@@ -198,8 +198,8 @@ struct ContentView: View {
 					.frame(width: 300, height: 60)
 			}
 			.buttonStyle(.glass)
-		}
-		.padding(.bottom, 20)
+			.padding()
+		
 	}
 }
 

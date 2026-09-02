@@ -168,6 +168,7 @@ struct SettingsView: View {
 			.padding()
 			
 		}
+		.padding()
 	}
 }
 
