@@ -33,6 +33,7 @@ struct SettingsView: View {
 				Button("Reset to default"){
 					showResetAlert = true
 				}
+				.foregroundColor(Color.red)
 				.alert("Reset all values?", isPresented: $showResetAlert) {
 					Button("Cancel", role: .cancel) { }
 					Button("Reset", role: .destructive) {
@@ -41,6 +42,7 @@ struct SettingsView: View {
 					}
 				}
 			}
+//			.backgroundStyle(RoundedRectangle)
 			
 			
 			Text("Use another currency?")
@@ -159,7 +161,7 @@ struct SettingsView: View {
 					}
 				}
 				label: {
-					Text("Version: 0.8.1")
+					Text("Version: 0.8.2")
 						.bold()
 						.font(.footnote)
 						.foregroundStyle(Color.secondary)
