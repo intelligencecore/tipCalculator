@@ -198,7 +198,7 @@ struct ContentView: View {
 					.frame(width: 300, height: 60)
 			}
 			.buttonStyle(.glass)
-			.padding()
+			.padding(.bottom, 50)
 		
 	}
 }
