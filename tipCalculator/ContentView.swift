@@ -178,13 +178,14 @@ struct ContentView: View {
 				.disabled(inputNumber == 0 && tip == .none)
 				
 			}
+			.padding(.bottom, 20)
 			.padding(.horizontal, 20)
 			.padding(.vertical, 24)
 		}
 		.scrollDismissesKeyboard(.interactively)
 		.background(Color(.systemGroupedBackground))
 		.navigationTitle("Tip Calculator")
-		.navigationBarTitleDisplayMode(.automatic)
+		.navigationBarTitleDisplayMode(.large)
 			// "Done button"
 		.toolbar {
 			ToolbarItemGroup(placement: .keyboard){

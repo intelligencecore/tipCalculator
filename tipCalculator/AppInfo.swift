@@ -35,7 +35,6 @@ struct AppInfo: View {
 			
 			
 			Button("Learn more about Swift") {
-			 // add a link to the official swift documentation from Apple.
 				if let url = URL(string: "https://apple.com/swift") {
 					UIApplication.shared.open(url)
 				}
