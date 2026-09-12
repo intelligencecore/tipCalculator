@@ -161,22 +161,22 @@ struct ContentView: View {
 					// numericText only rolls the digits if something animates the change
 				.animation(.snappy(duration: 0.25), value: total)
 				
-				
+				// removed since the full view is a scrollview
 					//Button to reset the value to zero.
-				Button {
-					inputNumber = 0
-					customAmount = 0
-					tip = .none
-					isInputDone = false
-				} label: {
-					Text("Reset")
-						.bold()
-						.foregroundColor(Color.red)
-						.frame(maxWidth: .infinity, minHeight: 60)
-				}
-				.buttonStyle(.glass)
-				.disabled(inputNumber == 0 && tip == .none)
-				
+//				Button {
+//					inputNumber = 0
+//					customAmount = 0
+//					tip = .none
+//					isInputDone = false
+//				} label: {
+//					Text("Reset")
+//						.bold()
+//						.foregroundColor(Color.red)
+//						.frame(maxWidth: .infinity, minHeight: 60)
+//				}
+//				.buttonStyle(.glass)
+//				.disabled(inputNumber == 0 && tip == .none)
+//				
 			}
 			.padding(.bottom, 20)
 			.padding(.horizontal, 20)

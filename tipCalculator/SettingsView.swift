@@ -6,7 +6,7 @@ struct SettingsView: View {
 	
 	
 		// string connected to the calc output saying the currency (USD or
-	
+	//TODO: Remove this and the currency buttons since the buttons are not necesary. 
 	enum countryCurrency{
 		
 		case cdefault(String)

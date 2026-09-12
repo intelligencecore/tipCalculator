@@ -11,7 +11,7 @@ struct DivideView: View {
 		VStack {
 			Text("What's the full amount of the bill that you got?")
 				.bold()
-				.font(.title)
+				.font(.largeTitle)
 				.fontWeight(.regular)
 				.padding(.bottom, 10)
 			
@@ -23,10 +23,10 @@ struct DivideView: View {
 				.bold()
 				.font(.headline)
 				.keyboardType(.decimalPad)
-				.padding(.bottom, 25)
+				.padding(.bottom, 10)
 			
 			Text("How many friends did you bring along to the restaurant?")
-				.font(.caption)
+				.font(.largeTitle)
 				.navigationTitle("Friends Tip Divisor")
 			
 			
@@ -47,6 +47,8 @@ struct DivideView: View {
 				
 			} label: {
 				Text("One Friend")
+					.foregroundColor(Color.black)
+
 				Image(systemName: "person")
 					.font(.title)
 			}
@@ -54,9 +56,8 @@ struct DivideView: View {
 			.frame(width: 180, height: 180)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.foregroundColor(Color.purple)
+					.foregroundColor(Color.yellow)
 			)
-//			.padding()
 
 			
 			Button {
@@ -136,10 +137,6 @@ struct DivideView: View {
 		.buttonBorderShape(.roundedRectangle)
 	}
 	
-	
-//	func division(input one:Int, input two:Int)-> Int{
-//		return 0
-//	}
 	
 	
 }
