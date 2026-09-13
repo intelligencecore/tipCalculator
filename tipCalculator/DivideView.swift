@@ -25,10 +25,11 @@ struct DivideView: View {
 				.keyboardType(.decimalPad)
 				.padding(.bottom, 10)
 			
-			Text("How many friends did you bring along to the restaurant?")
-				.font(.largeTitle)
+			Text("How many friends did you bring to the restaurant?")
+				.font(.subheadline)
+				.scaledToFit()
 				.navigationTitle("Friends Tip Divisor")
-			
+				.padding(.top, 20)
 			
 			
 		}
@@ -41,14 +42,14 @@ struct DivideView: View {
 		//TODO: Fix the buttions to be side by sude on the screen and maybe making them bigger (Screen edge)
 			
 			Button {
-				
-				divisor = "2"
-				showResultSheet = true
-				
+				withAnimation(.snappy(duration: 0.2)) {
+					divisor = "2"
+					showResultSheet = true
+				}
 			} label: {
 				Text("One Friend")
-					.foregroundColor(Color.black)
-
+					.foregroundColor(.black)
+				
 				Image(systemName: "person")
 					.font(.title)
 			}
@@ -56,8 +57,9 @@ struct DivideView: View {
 			.frame(width: 180, height: 180)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.foregroundColor(Color.yellow)
+					.foregroundColor(.yellow.opacity(0.5))
 			)
+			
 
 			
 			Button {
