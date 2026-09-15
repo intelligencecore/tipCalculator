@@ -57,7 +57,7 @@ struct DivideView: View {
 			.frame(width: 180, height: 180)
 			.background(
 				RoundedRectangle(cornerRadius: 11)
-					.foregroundColor(.yellow.opacity(0.5))
+					.foregroundColor(.yellow)
 			)
 			
 
